@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Rank
+{% endblock %}
+
+{% block main %}
+    <div class="jumbotron">
+        <div class="container-full-bg">
+            <h3 class="display-4">Harvard Housing Wars </h3><h4 class="text-muted">House Ranking Form</h4>
+            <h5 class="text-muted">Please input rankings as integer values from 1 to 10, inclusive.</h5>
+          </div>
+    </div>
+    <br>
+    <form action="/rank" method="post">
+         <label><b>Choose a house: </b></label>
+          <select class="form-control" name="house">
+            <option value="Adams">Adams</option>
+            <option value="Cabot">Cabot</option>
+            <option value="Currier">Currier</option>
+            <option value="Dunster">Dunster</option>
+            <option value="Eliot">Eliot</option>
+            <option value="Kirkland">Kirkland</option>
+            <option value="Leverett">Leverett</option>
+            <option value="Lowell">Lowell</option>
+            <option value="Mather">Mather</option>
+            <option value="Pforzheimer">Pforzheimer</option>
+            <option value="Quincy">Quincy</option>
+            <option value="Winthrop">Winthrop</option>
+          </select>
+          <br>
+          <br>
+        <div class="form-group">
+            <label>Spaciousness: </label>
+            <input autocomplete="off" width = "20" autofocus class="form-control" name="spaciousness" type="number" min="1" max="10" required>
+
+            <label> Convenience: </label>
+            <input autocomplete="off" autofocus class="form-control" name="convenience" type="number" min="1" max="10" required>
+
+            <label> Amenities: </label>
+            <input autocomplete="off" autofocus class="form-control" name="amenities" type="number" min="1" max="10" required>
+            <br>
+            <br>
+            <label> Cleanliness: </label>
+            <input autocomplete="off" autofocus class="form-control" name="cleanliness" type="number" min="1" max="10" required>
+
+            <label> Community: </label>
+            <input autocomplete="off" autofocus class="form-control" name="community" type="number" min="1" max="10" required>
+
+            <label> D-Hall: </label>
+            <input autocomplete="off" autofocus class="form-control" name="diningHall" type="number" min="1" max="10" required>
+        </div>
+        <button class="btn btn-primary" type="submit">Submit</button>
+    </form>
+{% endblock %}
